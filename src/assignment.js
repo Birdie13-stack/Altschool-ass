@@ -4,7 +4,7 @@ const assignment = {};
 // ========================
 
 
-/**
+/*
  * Challenge - 1
  * 
  * Calculate and return the sum of the numbers in an array.
@@ -27,10 +27,18 @@ function sumOfNumbers(arrayOfNumbers) {
  * @param {Array} arrayOfNumbers the array containing even or non-even numbers
  * @returns number the count of even numbers
  */
+
+let arrayOfNumbers =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 function countEvenNumbers(arrayOfNumbers) {
-    return arrayOfNumbers.length;
+   const even = arrayOfNumbers.filter(number =>{
+     if (number % 2 === 0){
+       return number
+     }
+   });
+  console.log(even)
 }
-// assignment.countEvenNumbers = countEvenNumbers;
+assignment.countEvenNumbers = countEvenNumbers;
 
 /**
  * Challenge - 3
@@ -46,9 +54,22 @@ function countEvenNumbers(arrayOfNumbers) {
  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
  * @returns Array the converted temperatures in Fahrenheit
  */
-function celsiusToFahrenheit(arrayOfNumbers) {
-    return arrayOfNumbers;
+
+function celsiusToFahrenheit(tempInCelsius) {
+  return tempInCelsius.map(                 
+    function(tempInCelsius) {               
+      return Math.floor((tempInCelsius * 5 / 9) + 32)
+    }
+  );
 }
+
+let tempInCelsius = [23, 53, 56];
+let tempInFarenheit = celsiusToFahrenheit(tempInCelsius);
+
+
+console.log(tempInFarenheit);
+
+
 // assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
